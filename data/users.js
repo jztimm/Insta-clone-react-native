@@ -46,6 +46,6 @@ export const USERS = [
   {
     user: 'Zack Snyder',
     image:
-    'https://static.wikia.nocookie.net/batman/images/3/33/Zack_Snyder.jpg/revision/latest?cb=20200802013515'
+    'https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2Fc1920e8a-a909-11eb-972f-15a4ff2ab1d7.jpg?crop=2239%2C1259%2C6%2C6&resize=1200'
   },
 ]
