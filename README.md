@@ -1,3 +1,9 @@
+# Tech Stack:
+
+- React Native
+- Firebase
+- Formik and Yup
+
 # My Universal React Project
 
 <p>
