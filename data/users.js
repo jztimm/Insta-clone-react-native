@@ -10,8 +10,8 @@ export const USERS = [
     'https://www.masslive.com/resizer/kNl3qvErgJ3B0Cu-WSBWFYc1B8Q=/arc-anglerfish-arc2-prod-advancelocal/public/W5HI6Y4DINDTNP76R6CLA5IWRU.jpeg'
   },
   {
-    user: 'Wendy',
-    image: 'https://i.imgur.com/dxjd7FB.jpg'
+    user: 'Irene',
+    image: 'https://kpopping.com/documents/f3/3/800/210827-Red-Velvet-Irene-Instagram-Update-documents-2.jpeg'
   },
   {
     user: 'Kato',
