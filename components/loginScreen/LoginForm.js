@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Button, StyleSheet, Pressable } from 'react-native'
+import { View, Text, TextInput, Button, StyleSheet, Pressable, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 const LoginForm = () => {
@@ -28,9 +28,19 @@ const LoginForm = () => {
       <View style={{alignItems: 'flex-end', marginBottom: 30}}>
         <Text style={{color: '#6BB0F5'}}>Forgot password</Text>
       </View>
+
       <Pressable titleSize={20} style={styles.button}>
         <Text style={styles.buttonText}>Log in</Text>
       </Pressable>
+
+      <View style={styles.signupContainer}>
+    <Text>Don't have an ccount?</Text>
+    <TouchableOpacity>
+      <Text style={{color: '#6BB0F5'}}>
+        {' '}Sign up
+      </Text>
+    </TouchableOpacity>
+      </View>
     </View>
   )
 }
@@ -60,6 +70,12 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#fff',
     fontSize: 20
+  },
+  signupContainer: {
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'center',
+    marginTop: 50
   }
 })
 
