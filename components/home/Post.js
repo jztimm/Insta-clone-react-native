@@ -62,9 +62,11 @@ const PostHeader = ({post}) => (
       </Text>
     </View>
 
-      <Text style={{color: 'white', fontWeight: '900'}}>
-        ...
-      </Text>
+      <TouchableOpacity>
+        <Text style={{color: 'white', fontWeight: '900'}}>
+          ...
+        </Text>
+      </TouchableOpacity>
   </View>
 )
 
