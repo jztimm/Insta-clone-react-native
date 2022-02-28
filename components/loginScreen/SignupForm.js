@@ -83,7 +83,7 @@ const SignupForm = () => {
               style={styles.button(isValid)}
               onPress={handleSubmit}
             >
-              <Text style={styles.buttonText}>Sign up</Text>
+              <Text style={styles.buttonText}>Sign Up</Text>
             </Pressable>
 
             <View style={styles.signupContainer}>
