@@ -1,0 +1,28 @@
+{
+  "expo": "!Ig clone",
+  "slug": "Ig-clone",
+  "discription": "This is a light mockup of Instagram. Used to get a better grasp of react-native",
+  "version": "1.0.0",
+  "orientation": "portrait",
+  "icon": "./assets/!IG-clone.png",
+  "splash": {
+    "image": "./assets/!IG-clone.png",
+    "resizeMode": "contain",
+    "backgroundColor": "#ffffff"
+  },
+  "updates": {
+    "fallbackToCacheTimeout": 0
+  },
+  "assetBundlerPatters": [
+    "**/*"
+  ],
+  "ios": {
+    "supportTablet": true
+  },
+  "android": {
+    "adaptiveIcon": {
+      "foregroundImage": "./assets/!IG-clone.png",
+      "backgroundColor": "#ffffff"
+    }
+  }
+}
