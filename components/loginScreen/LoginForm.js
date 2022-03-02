@@ -1,23 +1,55 @@
-import { View, Text, TextInput, StyleSheet, Pressable, TouchableOpacity } from 'react-native'
 import React, {useState} from 'react'
+import {
+  View,
+  Text,
+  TextInput, StyleSheet,
+  Pressable,
+  TouchableOpacity,
+  Alert
+} from 'react-native'
+import firebase from '../../firebase'
+
 import {Formik} from 'formik'
 import * as Yup from 'yup'
 import Validator from 'email-validator'
 
 
-const LoginForm = () => {
+const LoginForm = ({navigation}) => {
 
   const LoginFormSchema = Yup.object().shape({
     email: Yup.string().email().required('An email is required'),
     password: Yup.string().required().min(6, 'Your password has to have at least 8 characters')
   })
 
+  const onLogin = async (email, password) => {
+    try {
+      await firebase.auth().signInWithEmailAndPassword(email, password)
+      console.log("🔥 Firebase Login Successful : ✔", email, password)
+    } catch(err) {
+      Alert.alert(
+        'Oops!',
+        err.message + '\n\n What would you like to do next?',
+        [
+          {
+            text: 'Go Back',
+            onPress: () => console.log('OK'),
+            style: 'cancel'
+          },
+          {
+            text: 'Sign Up',
+            onPress: () => navigation.push('SignupScreen')
+          }
+        ]
+      )
+    }
+  }
+
   return (
     <View style={styles.wrapper}>
       <Formik
         initialValues={{email: '', password: ''}}
         onSubmit={(values) => {
-          console.log(values)
+          onLogin(values.email, values.password)
         }}
         validationSchema={LoginFormSchema}
         validateOnMount={true}
@@ -60,9 +92,12 @@ const LoginForm = () => {
                 value={values.password}
               />
             </View>
-            <View style={{alignItems: 'flex-end', marginBottom: 30}}>
+            <TouchableOpacity
+              style={{alignItems: 'flex-end', marginBottom: 30}}
+              onPress={() => navigation.push('ForgotPasswordScreen')}
+            >
               <Text style={{color: '#6BB0F5'}}>Forgot password</Text>
-            </View>
+            </TouchableOpacity>
 
             <Pressable
               titleSize={20}
@@ -74,7 +109,7 @@ const LoginForm = () => {
 
             <View style={styles.signupContainer}>
               <Text>Don't have an ccount?</Text>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.push('SignupScreen')}>
                 <Text style={{color: '#6BB0F5'}}>
                   {' '}Sign up
                 </Text>

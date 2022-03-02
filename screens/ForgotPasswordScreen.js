@@ -1,17 +1,17 @@
 import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
-import LoginForm from '../components/loginScreen/LoginForm'
+import ForgotPassword from '../components/ForgotPasswordScreen/ForgotPassword'
 
-const INSTAGRAM_LOGO =
-  'https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-512.png'
+const SORRY_IMG =
+  'https://scottcochrane.com/wp-content/uploads/2016/05/shrug.jpg'
 
-const LoginScreen = ({navigation}) => {
+const ForgotPasswordScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
-        <Image source={{uri: INSTAGRAM_LOGO, height: 100, width: 100}}/>
+        <Image source={{uri: SORRY_IMG, height: 200, width: 300}}/>
       </View>
-      <LoginForm navigation={navigation}/>
+      <ForgotPassword navigation={navigation}/>
     </View>
   )
 }
@@ -29,4 +29,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default LoginScreen
+export default ForgotPasswordScreen

@@ -1,18 +1,24 @@
 {
   "dependencies": {
+    "-": "^0.0.1",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/stack": "^6.1.1",
     "email-validator": "^2.0.4",
     "expo": "^44.0.0",
     "formik": "^2.2.9",
+    "install": "^0.13.0",
+    "link": "^0.1.5",
+    "pod": "^0.9.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-native": "0.64.3",
+    "react-native": "^0.64.3",
     "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "^2.2.0",
-    "react-native-web": "0.17.1",
+    "react-native-image-picker": "^4.7.3",
+    "react-native-web": "^0.17.6",
     "valid-url": "^1.0.9",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "firebase": "8.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
