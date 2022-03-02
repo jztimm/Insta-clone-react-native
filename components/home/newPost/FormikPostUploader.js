@@ -1,5 +1,5 @@
 import { View, Text, Image, TextInput } from 'react-native'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import * as Yup from 'yup'
 import {Formik} from 'formik'
 import { Button, Divider } from 'react-native-elements'
@@ -49,20 +49,20 @@ const FormikPostUploader = ({navigation}) => {
         profile_picture: currentLoggedInUser.profilePicture,
         owner_uid: firebase.auth().currentUser.uid,
         caption: caption,
-        createdAt: firebase.firestore.FieldValue.sevenTimestamp(),
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         likes: 0,
         likes_by_users: [],
         comments: []
-      })
+      }).then(() => navigation.goBack())
+
+      return unsubscribe
   }
 
   return (
     <Formik
       initialValues={{caption: '', imageUrl: ''}}
       onSubmit={(values) => {
-        console.log(values)
-        console.log('Your post was submitted successfully 🎉')
-        navigation.goBack()
+        uploadPostToFirebase(values.imageUrl, values.caption)
       }}
       validationSchema={uploadPostSchema}
       validateOnMount={true}
